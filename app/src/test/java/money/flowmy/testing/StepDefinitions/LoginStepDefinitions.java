@@ -5,29 +5,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import money.flowmy.testing.PageObjects.LoginPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginStepDefinitions {
     private LoginPage loginPage;
-//
-//    @Before
-//    public void beforeEach() {
-//        this.loginPage = new LoginPage();
-//    }
-//
-//    @After
-//    public void afterEach(Scenario scenario) {
-//        try {
-//            File file = ((TakesScreenshot) loginPage.webDriver).getScreenshotAs(OutputType.FILE);
-//            FileUtils.copyFile(file, new File("target/screenshots/" + scenario.getId() + ".png"));
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        this.loginPage.afterEach();
-//    }
 
     @Given("I am on the login page")
     public void iAmOnTheLoginPage() {
+        WebDriver webDriver = new ChromeDriver();
+        this.loginPage = new LoginPage(webDriver);
+        this.loginPage.webDriver.navigate().to(this.loginPage.url);
     }
 
     @When("type {string} in email field")

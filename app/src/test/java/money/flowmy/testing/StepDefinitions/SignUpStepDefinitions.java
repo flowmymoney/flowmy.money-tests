@@ -1,6 +1,6 @@
 package money.flowmy.testing.StepDefinitions;
 
-import io.cucumber.java.Before;
+import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,7 +8,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import money.flowmy.testing.PageObjects.SignUp;
 import org.apache.commons.io.FileUtils;
-import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -21,25 +20,22 @@ import java.io.IOException;
 public class SignUpStepDefinitions {
     private SignUp signUp;
 
-    @Before
-    public void before() {
-        WebDriver webDriver = new ChromeDriver();
-        signUp = new SignUp(webDriver);
-    }
-
     @After
     public void after(Scenario scenario) {
-
         try {
             File file = ((TakesScreenshot) signUp.webDriver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(file, new File("target/screenshots/" + scenario.getId() + ".png"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        this.signUp.webDriver.quit();
     }
 
     @Given("I am on the sign up page")
     public void iAmOnTheSignUpPage() {
+        WebDriver webDriver = new ChromeDriver();
+        signUp = new SignUp(webDriver);
         signUp.webDriver.navigate().to(signUp.url);
     }
 

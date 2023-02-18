@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "money.flowmy.testing.StepDefinitions",
         plugin = {"pretty", "html:target/cucumber-reports.html"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        dryRun = true
+        dryRun = false
 )
 public class RunnerTest {
 
