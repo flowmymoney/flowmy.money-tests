@@ -1,4 +1,4 @@
-package end.to.end.testing.PageObjects;
+package money.flowmy.testing.PageObjects;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -14,15 +14,11 @@ public class PageObject {
         chromeOptions.addArguments("--headless --disable-gpu");
         WebDriverManager.chromedriver().setup();
         this.url = url;
-    }
-
-    public void before() {
         this.webDriver = new ChromeDriver();
         this.webDriver.manage().window().maximize();
-        this.webDriver.navigate().to(this.url);
     }
 
-    public void after() {
+    public void afterEach() {
         this.webDriver.quit();
     }
 }

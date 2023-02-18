@@ -7,16 +7,27 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.8.0'
-    implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.+'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.9.+'
 
+    // Selenium
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.8.+'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.+'
+
+    // Cucumber
+    testImplementation 'io.cucumber:cucumber-java:7.11.+'
+    testImplementation 'io.cucumber:cucumber-junit:7.11.+'
+
+
+    // API
+    testImplementation 'io.rest-assured:rest-assured:5.3.+'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.+'
 
     implementation 'com.google.guava:guava:31.1-jre'
 }
 
 application {
-    mainClass = 'end.to.end.testing.App'
+    mainClass = 'money.flowmy.testing.App'
 }
 
 tasks.named('test') {
