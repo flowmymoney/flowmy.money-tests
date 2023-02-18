@@ -1,19 +1,25 @@
 package money.flowmy.testing.PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class SignUp extends PageObject {
+public class SignUp {
 
     public String url = "http://dev.flowmy.money/register";
-    private By nameInput = By.id("first_name");
-    private By lastNameInput = By.id("last_name");
-    private By emailInput = By.id("email");
-    private By passwordInput = By.id("password");
-    private By passwordConfirmationInput = By.id("password_confirmation");
-    private By signUpButton = By.xpath("/html/body/div[1]/div/form/div/div[7]/input");
+    public WebDriver webDriver;
 
-    public SignUp() {
-        super("http://dev.flowmy.money/register");
+    private final By nameInput = By.id("first_name");
+    private final By lastNameInput = By.id("last_name");
+    private final By emailInput = By.id("email");
+    private final By passwordInput = By.id("password");
+    private final By passwordConfirmationInput = By.id("password_confirmation");
+    private final By signUpButton = By.xpath("/html/body/div[1]/div/form/div/div[7]/input");
+
+    public SignUp(WebDriver webDriver) {
+        this.webDriver = webDriver;
+        this.webDriver.manage().window().maximize();
+        PageFactory.initElements(webDriver, this);
     }
 
     public void fillNameInput(String name) {
