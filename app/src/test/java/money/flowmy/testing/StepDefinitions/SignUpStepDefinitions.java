@@ -1,35 +1,21 @@
 package money.flowmy.testing.StepDefinitions;
 
 import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import money.flowmy.testing.PageObjects.SignUp;
-import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.io.File;
-import java.io.IOException;
 
 public class SignUpStepDefinitions {
     private SignUp signUp;
 
     @After
-    public void after(Scenario scenario) {
-        try {
-            File file = ((TakesScreenshot) signUp.webDriver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(file, new File("target/screenshots/" + scenario.getId() + ".png"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        this.signUp.webDriver.quit();
+    public void after() {
+        signUp.webDriver.quit();
     }
 
     @Given("I am on the sign up page")

@@ -8,13 +8,10 @@ Feature: Login
 
   Background:
     Given I am on the login page
-    #And the following users exist:
-    #  | email | password | password_confirmation |
-    #  | test | test | test |
 
   Scenario: Login with valid credentials
-    When type "test" in email field
-    And type "test" in password field
+    When type "RitaACyheatham@armywspy.com" in email field
+    And type "123456789" in password field
     And click on login button
     Then I should see the authenticated user's main screen
 
