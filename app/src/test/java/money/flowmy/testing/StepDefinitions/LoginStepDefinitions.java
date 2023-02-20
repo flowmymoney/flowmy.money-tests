@@ -5,16 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import money.flowmy.testing.PageObjects.LoginPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginStepDefinitions {
-    private LoginPage loginPage;
+    private LoginPage loginPage = new LoginPage(Hooks.getWebDriver());
 
     @Given("I am on the login page")
     public void iAmOnTheLoginPage() {
-        WebDriver webDriver = new ChromeDriver();
-        this.loginPage = new LoginPage(webDriver);
         this.loginPage.webDriver.navigate().to(this.loginPage.url);
     }
 

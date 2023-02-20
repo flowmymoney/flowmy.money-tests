@@ -19,8 +19,8 @@ Feature: Sign up
     Then I must be authenticated
 
     Examples:
-      | first_name | last_name   | email                       | password  | password_confirmation |
-      | Rita       | A. Cheatham | RitaACyheatham@armywspy.com | 123456789 | 123456789             |
+      | first_name | last_name   | email                           | password  | password_confirmation |
+      | Rita       | A. Cheatham | RitddaACyddheatham@armywspy.com | 123456789 | 123456789             |
 
   Scenario Outline: User can't create a new account with invalid data
     When I fill name with "<first_name>"

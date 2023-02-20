@@ -1,27 +1,17 @@
 package money.flowmy.testing.StepDefinitions;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import money.flowmy.testing.PageObjects.SignUp;
+import money.flowmy.testing.PageObjects.SignUpPage;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SignUpStepDefinitions {
-    private SignUp signUp;
-
-    @After
-    public void after() {
-        signUp.webDriver.quit();
-    }
+    private SignUpPage signUp = new SignUpPage(Hooks.getWebDriver());
 
     @Given("I am on the sign up page")
     public void iAmOnTheSignUpPage() {
-        WebDriver webDriver = new ChromeDriver();
-        signUp = new SignUp(webDriver);
         signUp.webDriver.navigate().to(signUp.url);
     }
 
