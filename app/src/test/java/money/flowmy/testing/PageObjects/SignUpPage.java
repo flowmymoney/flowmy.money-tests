@@ -7,53 +7,59 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignUpPage {
 
-    public String url = "http://dev.flowmy.money/register";
+    public static String url = "http://dev.flowmy.money/register";
     public WebDriver webDriver;
 
     @FindBy(id = "first_name")
-    private WebElement nameInput;
+    public WebElement nameInput;
 
     @FindBy(id = "last_name")
-    private WebElement lastNameInput;
+    public WebElement lastNameInput;
 
     @FindBy(id = "email")
-    private WebElement emailInput;
+    public WebElement emailInput;
 
     @FindBy(id = "password")
-    private WebElement passwordInput;
+    public WebElement passwordInput;
 
     @FindBy(id = "password_confirmation")
-    private WebElement passwordConfirmationInput;
+    public WebElement passwordConfirmationInput;
 
     @FindBy(xpath = "/html/body/div[1]/div/form/div/div[7]/input")
-    private WebElement signUpButton;
+    public WebElement signUpButton;
 
     public SignUpPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 
-    public void fillNameInput(String name) {
+    public SignUpPage fillNameInput(String name) {
         nameInput.sendKeys(name);
+        return this;
     }
 
-    public void fillLastNameInput(String lastName) {
+    public SignUpPage fillLastNameInput(String lastName) {
         lastNameInput.sendKeys(lastName);
+        return this;
     }
 
-    public void fillEmailInput(String email) {
+    public SignUpPage fillEmailInput(String email) {
         emailInput.sendKeys(email);
+        return this;
     }
 
-    public void fillPasswordInput(String password) {
+    public SignUpPage fillPasswordInput(String password) {
         passwordInput.sendKeys(password);
+        return this;
     }
 
-    public void fillPasswordConfirmationInput(String passwordConfirmation) {
+    public SignUpPage fillPasswordConfirmationInput(String passwordConfirmation) {
         passwordConfirmationInput.sendKeys(passwordConfirmation);
+        return this;
     }
 
-    public void clickSignUpButton() {
+    public SignUpPage clickSignUpButton() {
         signUpButton.click();
+        return this;
     }
 }

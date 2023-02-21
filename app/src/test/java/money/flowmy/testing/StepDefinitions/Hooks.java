@@ -9,13 +9,13 @@ public class Hooks {
     private static WebDriver webDriver;
 
     @Before
-    public static void setUp() {
+    public static void before() {
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
     }
 
     @After
-    public static void tearDown() {
+    public static void after() {
         webDriver.quit();
     }
 

@@ -8,10 +8,11 @@ Feature: Login
 
   Background:
     Given I am on the login page
+     And I have a valid account
 
   Scenario: Login with valid credentials
-    When type "RitaACyheatham@armywspy.com" in email field
-    And type "123456789" in password field
+    When type a valid email in email field
+    And type a valid password in password field
     And click on login button
     Then I should see the authenticated user's main screen
 

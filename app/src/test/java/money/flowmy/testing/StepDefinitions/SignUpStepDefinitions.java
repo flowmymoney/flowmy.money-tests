@@ -1,14 +1,27 @@
 package money.flowmy.testing.StepDefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import money.flowmy.testing.PageObjects.SignUpPage;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class SignUpStepDefinitions {
     private SignUpPage signUp = new SignUpPage(Hooks.getWebDriver());
+
+    @Given("I fill out the form correctly")
+    public void iFillOutTheFormCorrectly() {
+        String string = Faker.instance().internet().password();
+
+        signUp.fillNameInput(Faker.instance().name().firstName())
+                .fillLastNameInput(Faker.instance().name().lastName())
+                .fillEmailInput(Faker.instance().internet().emailAddress())
+                .fillPasswordInput(string)
+                .fillPasswordConfirmationInput(string);
+    }
 
     @Given("I am on the sign up page")
     public void iAmOnTheSignUpPage() {
@@ -17,6 +30,7 @@ public class SignUpStepDefinitions {
 
     @When("I fill name with {string}")
     public void iFillNameWith(String string) {
+        Faker.instance().name().firstName();
         signUp.fillNameInput(string);
     }
 
@@ -55,5 +69,15 @@ public class SignUpStepDefinitions {
     public void iMustNotBeAuthenticated() {
         Assert.assertEquals("http://dev.flowmy.money/register", signUp.webDriver.getCurrentUrl());
         Assert.assertEquals("Cadastro", signUp.webDriver.getTitle());
+    }
+
+    @And("I should see an error message saying {string}")
+    public void iShouldSeeAnErrorMessageSaying(String string) {
+        try {
+            String message = signUp.webDriver.findElement(By.className("invalid-feedback")).getText();
+            Assert.assertEquals(message, string);
+        } catch (Exception e) {
+            Assert.fail("Error message not found");
+        }
     }
 }
