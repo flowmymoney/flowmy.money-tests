@@ -25,7 +25,7 @@ public class SignUpPage {
     @FindBy(id = "password_confirmation")
     public WebElement passwordConfirmationInput;
 
-    @FindBy(xpath = "/html/body/div[1]/div/form/div/div[7]/input")
+    @FindBy(xpath = "/html/body/div/div/form/div/div[6]/input")
     public WebElement signUpButton;
 
     public SignUpPage(WebDriver webDriver) {

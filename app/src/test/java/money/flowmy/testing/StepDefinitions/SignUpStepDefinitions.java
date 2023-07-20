@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 
 public class SignUpStepDefinitions {
-    private SignUpPage signUp = new SignUpPage(Hooks.getWebDriver());
+    private final SignUpPage signUp = new SignUpPage(Hooks.getWebDriver());
 
     @Given("I fill out the form correctly")
     public void iFillOutTheFormCorrectly() {
@@ -25,7 +25,7 @@ public class SignUpStepDefinitions {
 
     @Given("I am on the sign up page")
     public void iAmOnTheSignUpPage() {
-        signUp.webDriver.navigate().to(signUp.url);
+        signUp.webDriver.navigate().to(SignUpPage.url);
     }
 
     @When("I fill name with {string}")
