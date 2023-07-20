@@ -61,13 +61,13 @@ public class SignUpStepDefinitions {
 
     @Then("I must be authenticated")
     public void iMustBeAuthenticated() {
-        Assert.assertEquals("http://dev.flowmy.money/", signUp.webDriver.getCurrentUrl());
+        Assert.assertEquals("http://localhost/", signUp.webDriver.getCurrentUrl());
         Assert.assertEquals("Dashboard", signUp.webDriver.getTitle());
     }
 
     @Then("I must not be authenticated")
     public void iMustNotBeAuthenticated() {
-        Assert.assertEquals("http://dev.flowmy.money/register", signUp.webDriver.getCurrentUrl());
+        Assert.assertEquals("http://localhost/register", signUp.webDriver.getCurrentUrl());
         Assert.assertEquals("Cadastro", signUp.webDriver.getTitle());
     }
 

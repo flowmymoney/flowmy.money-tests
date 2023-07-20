@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public String url = "http://dev.flowmy.money/login";
+    public String url = "http://localhost/login";
     public WebDriver webDriver;
 
 
