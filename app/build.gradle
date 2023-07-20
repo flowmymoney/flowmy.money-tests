@@ -12,7 +12,7 @@ dependencies {
 
     // Selenium
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.8.+'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.+'
+    // testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.+'
 
     // Cucumber
     testImplementation 'io.cucumber:cucumber-java:7.11.+'

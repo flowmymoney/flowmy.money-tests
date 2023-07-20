@@ -11,7 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginStepDefinitions {
-    private LoginPage loginPage = new LoginPage(Hooks.getWebDriver());
+    private final LoginPage loginPage = new LoginPage(Hooks.getWebDriver());
 
     String email = Faker.instance().internet().emailAddress();
     String password = Faker.instance().internet().password();

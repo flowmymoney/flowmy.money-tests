@@ -3,8 +3,8 @@
 
 Feature: Login
   As a user
-  I want to login
-  So that I can access my account
+  I want to be able to login
+  So that I can access my account and check my personal finances
 
   Background:
     Given I am on the login page
