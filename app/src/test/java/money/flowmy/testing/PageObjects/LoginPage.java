@@ -17,7 +17,7 @@ public class LoginPage {
     @FindBy(id = "password")
     private WebElement passwordInput;
 
-    @FindBy(xpath = "/html/body/div[1]/div/form/div/div[4]/button")
+    @FindBy(xpath = "/html/body/div/div/form/div/div[3]/button")
     private WebElement loginButton;
 
     @FindBy(xpath = "/html/body/div[1]/div/form/div/div[4]/a")
