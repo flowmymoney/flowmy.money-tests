@@ -10,7 +10,7 @@ public class BankAccountPage {
     public static String url = "http://localhost/financial/bankAccount";
     public WebDriver webDriver;
 
-    @FindBy(xpath = "//*[@id=\"create\"]")
+    @FindBy(id = "create")
     private WebElement createButton;
 
     @FindBy(id = "save")
@@ -19,14 +19,23 @@ public class BankAccountPage {
     @FindBy(id = "goBack")
     private WebElement goBackButton;
 
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div/div/form/div[2]/div/div/div/div[1]/input")
+    @FindBy(id = "actions")
+    private WebElement actions;
+
+    @FindBy(id = "show")
+    private WebElement show;
+
+    @FindBy(id = "edit")
+    private WebElement edit;
+
+    @FindBy(name = "surname")
     private WebElement bankAccountNameInput;
 
     @FindBy(name = "bank_id")
     private WebElement bankAccountSelect;
 
     @FindBy(name = "bank_account_type_id")
-    private WebElement bankAccountTypeSelect;
+    public WebElement bankAccountTypeSelect;
 
     @FindBy(name = "agency")
     private WebElement bankAccountAgencyInput;
@@ -52,12 +61,28 @@ public class BankAccountPage {
         return this;
     }
 
+    public BankAccountPage clickActionsButton() {
+        this.actions.click();
+        return this;
+    }
+
+    public BankAccountPage clickShowButton() {
+        this.show.click();
+        return this;
+    }
+
+    public BankAccountPage clickEditButton() {
+        this.edit.click();
+        return this;
+    }
+
     public BankAccountPage clickGoBackButton() {
         this.goBackButton.click();
         return this;
     }
 
-    public BankAccountPage fillBankAccountNameInput(String bankAccountName) {
+    public BankAccountPage fillBankAccountNameInput(CharSequence bankAccountName) {
+        this.bankAccountNameInput.clear();
         this.bankAccountNameInput.sendKeys(bankAccountName);
         return this;
     }
@@ -74,17 +99,20 @@ public class BankAccountPage {
         return this;
     }
 
-    public BankAccountPage fillBankAccountAgencyInput(String bankAccountAgency) {
+    public BankAccountPage fillBankAccountAgencyInput(CharSequence bankAccountAgency) {
+        this.bankAccountAgencyInput.clear();
         this.bankAccountAgencyInput.sendKeys(bankAccountAgency);
         return this;
     }
 
-    public BankAccountPage fillBankAccountNumberInput(String bankAccountNumber) {
+    public BankAccountPage fillBankAccountNumberInput(CharSequence bankAccountNumber) {
+        this.bankAccountNumberInput.clear();
         this.bankAccountNumberInput.sendKeys(bankAccountNumber);
         return this;
     }
 
-    public BankAccountPage fillBankAccountDigitInput(String bankAccountDigit) {
+    public BankAccountPage fillBankAccountDigitInput(CharSequence bankAccountDigit) {
+        this.bankAccountDigitInput.clear();
         this.bankAccountDigitInput.sendKeys(bankAccountDigit);
         return this;
     }
