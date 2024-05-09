@@ -7,23 +7,24 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.+'
-    testImplementation 'org.junit.vintage:junit-vintage-engine:5.9.+'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.+'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.10.+'
 
     // Selenium
-    testImplementation 'org.seleniumhq.selenium:selenium-java:4.8.+'
-    // testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.+'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.20.+'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.8.+'
+
 
     // Cucumber
-    testImplementation 'io.cucumber:cucumber-java:7.11.+'
-    testImplementation 'io.cucumber:cucumber-junit:7.11.+'
+    testImplementation 'io.cucumber:cucumber-java:7.17.+'
+    testImplementation 'io.cucumber:cucumber-junit:7.17.+'
 
     // API
-    testImplementation 'io.rest-assured:rest-assured:5.3.+'
+    testImplementation 'io.rest-assured:rest-assured:5.4.+'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.+'
 
     // Utils
-    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'com.google.guava:guava:33.2.0-jre'
     implementation 'com.github.javafaker:javafaker:1.+'
 }
 
