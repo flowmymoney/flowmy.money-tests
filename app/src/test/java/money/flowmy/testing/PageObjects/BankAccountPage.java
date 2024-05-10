@@ -1,50 +1,13 @@
 package money.flowmy.testing.PageObjects;
 
+import money.flowmy.testing.Maps.BankAccountPageMaps;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class BankAccountPage {
+public class BankAccountPage extends BankAccountPageMaps {
     public static String url = "http://nginx/financial/bankAccount";
     public WebDriver webDriver;
-
-    @FindBy(id = "create")
-    private WebElement createButton;
-
-    @FindBy(id = "save")
-    private WebElement saveButton;
-
-    @FindBy(id = "goBack")
-    private WebElement goBackButton;
-
-    @FindBy(id = "actions")
-    private WebElement actions;
-
-    @FindBy(id = "show")
-    private WebElement show;
-
-    @FindBy(id = "edit")
-    private WebElement edit;
-
-    @FindBy(name = "surname")
-    private WebElement bankAccountNameInput;
-
-    @FindBy(name = "bank_id")
-    private WebElement bankAccountSelect;
-
-    @FindBy(name = "bank_account_type_id")
-    public WebElement bankAccountTypeSelect;
-
-    @FindBy(name = "agency")
-    private WebElement bankAccountAgencyInput;
-
-    @FindBy(name = "number")
-    private WebElement bankAccountNumberInput;
-
-    @FindBy(name = "digit")
-    private WebElement bankAccountDigitInput;
 
     public BankAccountPage(WebDriver webDriver) {
         this.webDriver = webDriver;

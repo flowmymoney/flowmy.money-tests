@@ -1,33 +1,13 @@
 package money.flowmy.testing.PageObjects;
 
+import money.flowmy.testing.Maps.LoginPageMaps;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends LoginPageMaps {
 
     public String url = "http://nginx/login";
     public WebDriver webDriver;
-
-
-    @FindBy(id = "email")
-    private WebElement emailInput;
-
-    @FindBy(id = "password")
-    private WebElement passwordInput;
-
-    @FindBy(xpath = "/html/body/div/div/form/div/div[3]/button")
-    private WebElement loginButton;
-
-    @FindBy(xpath = "/html/body/div[1]/div/form/div/div[4]/a")
-    private WebElement iForgotThePasswordButton;
-
-    @FindBy(xpath = "/html/body/div[1]/div/div/a")
-    private WebElement iDontHaveAnAccountButton;
-
-    @FindBy(xpath = "/html/body/div[1]/div/form/div/div[1]/div")
-    private WebElement errorMessage;
 
     public LoginPage(WebDriver webDriver) {
         this.webDriver = webDriver;

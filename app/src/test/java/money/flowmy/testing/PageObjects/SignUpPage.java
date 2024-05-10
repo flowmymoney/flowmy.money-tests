@@ -1,32 +1,13 @@
 package money.flowmy.testing.PageObjects;
 
+import money.flowmy.testing.Maps.SignUpPageMaps;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignUpPage {
+public class SignUpPage extends SignUpPageMaps {
 
     public static String url = "http://nginx/register";
     public WebDriver webDriver;
-
-    @FindBy(id = "first_name")
-    public WebElement nameInput;
-
-    @FindBy(id = "last_name")
-    public WebElement lastNameInput;
-
-    @FindBy(id = "email")
-    public WebElement emailInput;
-
-    @FindBy(id = "password")
-    public WebElement passwordInput;
-
-    @FindBy(id = "password_confirmation")
-    public WebElement passwordConfirmationInput;
-
-    @FindBy(xpath = "/html/body/div/div/form/div/div[6]/input")
-    public WebElement signUpButton;
 
     public SignUpPage(WebDriver webDriver) {
         this.webDriver = webDriver;
