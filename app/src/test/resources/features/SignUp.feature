@@ -25,11 +25,12 @@ Feature: Sign up
     And I should see an error message saying "<error_message>"
 
     Examples:
-      | first_name | last_name | email                 | password | password_confirmation | error_message                             |
-      |            | Mockdata  | Mockdata@mockdata.com | Mockdata | Mockdata              | The first name field is required.         |
-      | Mockdata   |           | Mockdata@mockdata.com | Mockdata | Mockdata              | The last name field is required.          |
-      | Mockdata   | Mockdata  | Mockdata              | Mockdata | Mockdata              | The email must be a valid email address.  |
-      | Mockdata   | Mockdata  |                       | Mockdata | Mockdata              | The email field is required.              |
-      | Mockdata   | Mockdata  | Mockdata@mockdata.com |          | Mockdata              | The password field is required.           |
-      | Mockdata   | Mockdata  | Mockdata@mockdata.com | Mockdata |                       | The password confirmation does not match. |
-      | Mockdata   | Mockdata  | Mockdata@mockdata.com | Mockdata | MockdataMockdata      | The password confirmation does not match. |
+      | first_name | last_name | email                | password | password_confirmation | error_message                             |
+      | Mockdata   |           | Mockdata@gmail.com   | Mockdata | Mockdata              | The last name field is required.          |
+      |            | Mockdata  | Mockdata@gmail.com   | Mockdata | Mockdata              | The first name field is required.         |
+      | Mockdata   | Mockdata  | Mockdata             | Mockdata | Mockdata              | The email must be a valid email address.  |
+      | Mockdata   | Mockdata  | Mockdata@invalid.com |          | Mockdata              | The email must be a valid email address.  |
+      | Mockdata   | Mockdata  |                      | Mockdata | Mockdata              | The email field is required.              |
+      | Mockdata   | Mockdata  | Mockdata@gmail.com   |          | Mockdata              | The password field is required.           |
+      | Mockdata   | Mockdata  | Mockdata@gmail.com   | Mockdata |                       | The password confirmation does not match. |
+      | Mockdata   | Mockdata  | Mockdata@gmail.com   | Mockdata | MockdataMockdata      | The password confirmation does not match. |
