@@ -38,7 +38,7 @@ public class LoginStepDefinitions {
 
     @Then("I should see the authenticated user's main screen")
     public void iShouldSeeTheAuthenticatedUserSMainScreen() {
-        Assert.assertEquals("http://localhost/", this.loginPage.webDriver.getCurrentUrl());
+        Assert.assertEquals("http://nginx/", this.loginPage.webDriver.getCurrentUrl());
     }
 
     @Then("I should see {string}")

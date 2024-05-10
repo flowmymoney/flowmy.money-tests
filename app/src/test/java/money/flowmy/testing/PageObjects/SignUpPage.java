@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignUpPage {
 
-    public static String url = "http://localhost/register";
+    public static String url = "http://nginx/register";
     public WebDriver webDriver;
 
     @FindBy(id = "first_name")

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class BankAccountPage {
-    public static String url = "http://localhost/financial/bankAccount";
+    public static String url = "http://nginx/financial/bankAccount";
     public WebDriver webDriver;
 
     @FindBy(id = "create")
