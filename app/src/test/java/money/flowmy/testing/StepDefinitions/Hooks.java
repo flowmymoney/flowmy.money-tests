@@ -20,7 +20,6 @@ public class Hooks {
 
         webDriver = new RemoteWebDriver(url, options);
         webDriver.manage().window().maximize();
-        webDriver.get("https://www.google.com/");
     }
 
     @After
