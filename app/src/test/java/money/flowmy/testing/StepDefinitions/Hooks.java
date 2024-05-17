@@ -2,6 +2,7 @@ package money.flowmy.testing.StepDefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -17,6 +18,7 @@ public class Hooks {
 
         URL url = new URL("http://localhost:4444/wd/hub");
         ChromeOptions options = new ChromeOptions();
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
         webDriver = new RemoteWebDriver(url, options);
         webDriver.manage().window().maximize();
