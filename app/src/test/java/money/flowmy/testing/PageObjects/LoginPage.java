@@ -1,10 +1,10 @@
 package money.flowmy.testing.PageObjects;
 
-import money.flowmy.testing.Maps.LoginPageMaps;
+import money.flowmy.testing.Maps.LoginMaps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends LoginPageMaps {
+public class LoginPage extends LoginMaps {
 
     public String url = "http://nginx/login";
     public WebDriver webDriver;
