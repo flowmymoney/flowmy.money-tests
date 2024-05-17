@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends LoginActions {
 
-    public String url = "http://nginx/login";
+    public static String url = "http://nginx/login";
     public WebDriver webDriver;
 
     public LoginPage(WebDriver webDriver) {

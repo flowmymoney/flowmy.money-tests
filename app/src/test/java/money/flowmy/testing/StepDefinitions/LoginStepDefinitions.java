@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import money.flowmy.testing.PageObjects.LoginPage;
 import money.flowmy.testing.PageObjects.SignUpPage;
+import money.flowmy.testing.Settings.Hooks;
 import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
 

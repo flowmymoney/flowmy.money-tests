@@ -1,4 +1,4 @@
-package money.flowmy.testing.Runners;
+package money.flowmy.testing.Settings;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

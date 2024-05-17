@@ -1,4 +1,4 @@
-package money.flowmy.testing.StepDefinitions;
+package money.flowmy.testing.Settings;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

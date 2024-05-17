@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BankAccountPage extends BankAccountActions {
+
     public static String url = "http://nginx/financial/bankAccount";
     public WebDriver webDriver;
 
