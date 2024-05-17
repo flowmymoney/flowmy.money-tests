@@ -3,7 +3,7 @@ package money.flowmy.testing.Maps;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SignUpPageMaps {
+public class SignUpMaps {
 
     @FindBy(id = "first_name")
     protected WebElement nameInput;

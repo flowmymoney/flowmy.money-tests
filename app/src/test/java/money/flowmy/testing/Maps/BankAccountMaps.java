@@ -3,7 +3,7 @@ package money.flowmy.testing.Maps;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BankAccountPageMaps {
+public class BankAccountMaps {
 
     @FindBy(id = "create")
     protected WebElement createButton;

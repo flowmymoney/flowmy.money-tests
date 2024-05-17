@@ -56,7 +56,8 @@ public class LoginStepDefinitions {
                 .fillEmailInput(email)
                 .fillPasswordInput(password)
                 .fillPasswordConfirmationInput(password)
-                .clickSignUpButton()
-                .webDriver.quit();
+                .clickSignUpButton();
+
+        signUpPage.webDriver.quit();
     }
 }
