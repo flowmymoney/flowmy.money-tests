@@ -3,28 +3,33 @@ package money.flowmy.testing.Actions;
 import money.flowmy.testing.Maps.LoginMaps;
 
 public class LoginActions extends LoginMaps {
-    public void fillEmailInput(String email) {
+    public LoginActions fillEmailInput(String email) {
         emailInput.sendKeys(email);
+        return this;
     }
 
-    public void fillPasswordInput(String password) {
+    public LoginActions fillPasswordInput(String password) {
         passwordInput.sendKeys(password);
+        return this;
     }
 
-    public void clickLoginButton() {
+    public LoginActions clickLoginButton() {
         loginButton.click();
+        return this;
     }
 
-    public void clickIForgotThePasswordButton() {
+    public LoginActions clickIForgotThePasswordButton() {
         iForgotThePasswordButton.click();
+        return this;
     }
 
-    public void clickIDontHaveAnAccountButton() {
+    public LoginActions clickIDontHaveAnAccountButton() {
         iDontHaveAnAccountButton.click();
+        return this;
     }
 
-    public void assertErrorMessage(String string) {
+    public LoginActions assertErrorMessage(String string) {
         errorMessage.getText().equals(string);
+        return this;
     }
-
 }
